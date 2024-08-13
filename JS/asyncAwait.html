@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>asyncAwait</title>
+</head>
+
+<body>
+    <h1>Async Await</h1>
+    <div id="userDataContainer"></div>
+    <script>
+        async function fetchUserData() {
+            try {
+                // Read user data from the JSON file
+                const response = await fetch("users.json");
+                console.log("Response: ", response);
+                const userData = await response.json();
+                console.log("User data: ", userData);
+
+                // Process each user and display data in HTML
+                userData.forEach((user) => {
+                    console.log("User: ", user);
+                    // const { firstName, image, age } = user;  //Object destructuring
+
+                    const firstName = user.firstName;
+                    const image = user.image;
+                    const age = user.age;
+                    const latitude = user.address.coordinates.lat;
+                    const longitude = user.address.coordinates.lng;
+                    console.log("First Name: ", firstName);
+                    console.log("Image: ", image);
+                    console.log("Age: ", age);
+                    console.log("Latitude: ", latitude);
+                    console.log("Longitude: ", longitude);
+
+                    // Create HTML elements
+                    const userContainer = document.createElement("div");
+                    userContainer.innerHTML =
+                        ` <h2>${firstName}</h2>
+                          <p>Age: ${age}</p>
+                      <img src="${image}" alt="${firstName}'s Image" width="100">
+                      <p>Latitude: ${latitude}</p>
+                      <p>Longitude: ${longitude}</p>`;
+
+                    // Append the user container to the body
+                    document
+                        .getElementById("userDataContainer")
+                        .appendChild(userContainer);
+                });
+            } catch (error) {
+                console.error("Error fetching or processing user data:", error);
+            }
+        }
+
+        // Call the function to fetch and display user data
+        fetchUserData();
+    </script>
+</body>
+
+</html>  

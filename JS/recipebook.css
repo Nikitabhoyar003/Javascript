@@ -1,0 +1,49 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+}
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.tabs {
+    display: flex;
+    border-bottom: 2px solid #ccc;
+}
+.tab {
+    padding: 15px 20px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border-radius: 8px 8px 0 0;
+    margin-right: 5px;
+    transition: background-color 0.3s;
+}
+.tab.active {
+    background-color: #c33f3f;
+}
+.content {
+    padding: 20px;
+}
+.recipe {
+    display: none;
+    margin-bottom: 20px;
+}
+.recipe.active {
+    display: block;
+}
+h2 {
+    color: #555;
+    margin-top: 0;
+}
+p, ul {
+    margin: 0 0 10px;
+}
+ul {
+    padding-left: 20px;
+}

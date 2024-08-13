@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>message devlivery system</title>
+</head>
+
+<body>
+    <h2>Message Delivery System</h2>
+
+    <p>Type a message below and pass "Enter" to deliver it:</p>
+
+    <input id="Enterkey" type="text" onkeypress="keyPress(event)" placeholder="Enter">
+
+    <div id="deliver"> </div>
+    <p id="empty"></p>
+
+    <script>
+
+function keyPress(event) {
+            if (event.keyCode === 13) {
+                Enterkey();
+            }
+        }
+
+        let typeMessg = document.getElementById("Enterkey");
+        console.log(typeMessg);
+
+        let deliver= document.getElementById("deliver");
+            console.log(deliver);
+           
+        function Enterkey(){
+              
+            let itemtext= typeMessg.value.trim();
+            console.log(itemtext);
+
+            if(itemtext !== ""){
+                deliver.innerHTML += `<p>${itemtext}</p>`;
+                    typeMessg.value =""
+            }
+            else{
+   
+
+            }
+       
+
+        }
+            
+
+
+    
+    </script>
+
+
+
+</body>
+
+</html>

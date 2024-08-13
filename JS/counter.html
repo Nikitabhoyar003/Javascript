@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            margin-top: 200px;
+            text-align: center;
+            font-size: 40px;
+            background-color: greenyellow;
+        }
+
+        .plus{
+            color: green;
+        }
+         
+        .reset{
+            color :black;
+        }
+        
+        .mins{
+            color :red;
+        }
+
+    </style>
+</head>
+<!-- <body>
+                                                             
+     <h1>COUNTER</h1>
+   
+    <pre><button  id="btn">+</button>     <button id="btn">-</button></pre> <br>
+
+    <p id="display">0</p> -->
+
+
+<!-- <script>
+        function plus() {
+            let count = 0;
+            return function () {
+                count++;
+                return count;
+            }
+
+        }
+        const counter = createCounter();
+        const button1 = document.getElementById("btn");
+        const button2 = document.getElementById("btn");
+
+        const disp = document.getElementById("display");
+        button.addEventListener("+", () => {
+            disp.innerHTML = counter();
+        });
+        
+    </script> -->
+
+
+<body> 
+   <div class="box" >
+    <h1>COUNTER</h1>
+   
+    <button onclick="totalplusClick()" class="plus">+</button>  
+    <button onclick="ResetValue()" class="reset">RESET</button>
+    <button onclick="totalminusClick()" class="minus">-</button>
+   
+    <p id="demo"></p>
+
+    </div>
+    
+    <script>
+
+        let counter = 0;
+
+        function totalplusClick() {
+            counter++;
+            document.getElementById("demo").innerHTML = counter;
+            console.log(counter);
+            counter.style.color = red;
+        }
+
+        function totalminusClick() {
+            counter--;
+            document.getElementById("demo").innerHTML = counter;
+            console.log(counter);
+            counter.body.style.color = green;
+        }
+        
+
+        function ResetValue() {
+            counter = 0;
+            document.getElementById("demo").innerHTML = counter;
+            console.log(counter);
+
+        }
+
+
+   
+    
+     </script>
+
+
+
+
+</body>
+
+</html>

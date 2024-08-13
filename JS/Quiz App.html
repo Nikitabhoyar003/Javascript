@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+
+    <style>
+        
+      body{
+         border: 2px solid black; 
+        border-radius: 15px;
+        text-align: center;
+         margin-left: 500px;
+         margin-right: 500px;
+         margin-top:90px;
+         font-family: Arial, Helvetica, sans-serif;
+         background-color: rgb(65, 156, 225)
+
+      }
+
+      h1{
+        
+      color: rgb(139, 86, 0);
+      }
+
+      h2{
+        color:rgb(107, 47, 71) ;
+      }
+
+      .btn{
+        font-size:  20px;
+        background-color: rgb(0, 153, 255);
+        border-radius: 15px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+
+      input{
+        text-align: center;
+      }
+
+    </style>
+</head>
+<body>
+
+     <div class="app">
+
+      <h1>Quiz App</h1>
+  
+  <h2>Quiz 1</h2>
+
+  <p >What is the capital of France?</p>
+  
+  <input type="radio" id="paris" name="type">
+  <label for="quiz1">Paris</label><br>
+  <input type="radio" id="london" name="type">
+  <label for="quiz1">London</label><br>
+  <input type="radio" id="berlin" name="type">
+  <label for="quiz1">Berlin</label><br>
+  <input type="radio" id="rome" name="type">
+  <label for="quiz1">Rome</label><br>
+
+
+  <h2>Quiz 2</h2>
+
+  <p>What is 2+2?</p>
+  
+  <input type="radio" id="03" name="add" >
+  <label for="quiz2">3</label><br>
+  <input type="radio" id="04" name="add"  >
+  <label for="quiz2">4</label><br>
+  <input type="radio" id="05" name="add"  >
+  <label for="quiz2">5</label><br>
+  <input type="radio" id="06" name="add"  >
+  <label for="quiz2">6</label><br>
+
+
+  <h2>Quiz 3</h2>
+
+  <p>What is the capital of Japan</p>
+  
+  <input type="radio" id="quiz3" name="capital">
+  <label for="Beijing">Beijing</label><br>
+  <input type="radio" id="Beijing" name="capital">
+  <label for="Tokyo">Tokyo</label><br>
+  <input type="radio" id="tokoyo" name="capital">
+  <label for="Seoul">Seoul</label><br>
+  <input type="radio" id="seoul" name="capital">
+  <label for="Bangkok">Bangkok</label><br>  
+
+  <br><br>
+
+  <button type="button" onclick="submitQuiz()" class="btn">Submit</button>
+
+  <br>
+  <br>
+
+</div>
+
+    <script>
+  
+const questions = [
+ {
+'que': 'What is the capital of France?',
+ 'a' : 'paris',
+ 'b' : 'London',
+ 'c' : 'berlin',
+ 'd' : 'Rome' ,  
+  'correct': 'a'
+  },
+
+  {
+    'que': 'What is 2+2?',
+    'a': '3',
+    'b': '4',
+    'c': '5',
+   ' d': '6',
+    'correct': 'b'
+  },
+
+  {
+    'que': 'What is the capital of Japan?',
+    'a': 'Beijing',
+    'b': 'Tokyo',
+    'c': 'Seoul',
+    'd': 'Bangkok',
+    'correct': 'b' 
+  }
+];
+
+function submitQuiz() {
+
+  let score = 0;
+  for (let i = 0; i < questions.length; i++) {
+    const quizes = questions[i];
+    console.log(quizes);
+    const answerOne = document.querySelector('input[name="type"]:checked').id;
+    console.log(answerOne);
+
+    const answerTwo = document.querySelector('input[name="add"]:checked');
+    console.log(answerTwo);
+
+    const answerThree = document.querySelectorAll('input[name="captial"]:checked');
+    console.log(answerThree);
+  
+    if (answerOne) {
+      
+      if (answerOne.id === questions.correct) {
+        score++; 
+
+      }
+
+      if (answerTwo.id ===questions.correct){
+        score++
+      }
+
+      if (answerThree.id===questions.correct){
+        
+      }
+
+  }
+
+  }
+
+  alert(`Your score is: ${score} out of ${questions.length}`);
+
+}
+
+    </script>
+
+  
+</body>
+</html>

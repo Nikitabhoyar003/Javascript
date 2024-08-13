@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text carousel</title>
+</head>
+<body>
+
+    <p id="demo"></p>
+
+ <!-- <script>
+
+let lang = ['java', 'python', 'c', 'c++', 'javascript', 'react'];
+let programIndex = 0;
+    
+function changeLanguage() {
+
+    document.getElementById("demo").innerHTML = lang[programIndex];
+    programIndex= (programIndex+1)%lang.length;
+    } 
+    setInterval(changeLanguage, 500);
+
+
+    </script> -->
+
+     <script>
+    let programIndex = 0;
+
+    function changeLanguage() {
+        let lang = ['java', 'python', 'c', 'c++', 'javascript', 'react'];
+
+      let mylanguage = lang[programIndex % lang.length];
+
+       programIndex++;
+       
+     document.getElementById("demo").innerHTML = "An available language are:" + " " + mylanguage;
+        
+    } 
+
+    setInterval(changeLanguage, 500);
+
+ 
+    </script>
+
+
+</body>
+</html>

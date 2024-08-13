@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to-do-list</title>
+</head>
+
+<style>
+    #list {
+
+        padding: 10px 70px 20px 70px;
+    }
+
+    .h2 {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 28px;
+    }
+
+    body {
+        background-color: rgba(0, 81, 255, 0.769);
+        text-align: center;
+        margin-top: 100px;
+    }
+
+    form {
+        border: 3px solid black;
+        margin-left: 400px;
+        margin-right: 400px;
+        border-radius: 20px;
+    }
+
+    input {
+
+        font-size: 20px;
+        margin-top: 10px;
+        border-radius: 20px;
+        padding-top: 15px;
+        padding-left: 20px;
+        padding-bottom: 15px;
+        padding-right: 20px;
+        border: 4px solid rgb(0, 183, 255);
+
+    }
+
+    button {
+        margin-top: 10px;
+        border-radius: 20px;
+        border: 4px solid slategrey;
+        padding-top: 12px;
+        padding-left: 20px;
+        padding-bottom: 12px;
+        padding-right: 20px;
+    }
+
+    ul {
+        display: block;
+        align-items: center;
+        color: blanchedalmond;
+        margin-left: 60px;
+
+    }
+</style>
+
+<body>
+
+    <h2>To-Do-list</h2>
+
+
+    <input type="text" placeholder="Enter a new word" id="todolist">
+    <button id="mybtn" onclick="addList()">ADD</button>
+
+    <ul id="Listitems"> </ul>
+
+     <script>
+
+        let userInput = document.getElementById("todolist");
+        console.log(userInput)
+
+        function addList() {
+
+            let todo = document.getElementById('Listitems');
+
+            let itemtext = userInput.value.trim();
+            console.log(itemtext);
+            if (itemtext !== "") {
+                todo.innerHTML += `<li>${itemtext}</li>`;
+
+            }
+            userInput.value = ""
+
+        }
+
+    </script> 
+
+    <!-- <script>
+
+        const taskInput = document.getElementById("taskInput");
+        const addButton = document.getElementById("addbutton");
+        const taskList = document.getAnimations("taskList");
+
+        addButton.addEventListener("click", () => {
+            const taskText = taskInput.value.trim();
+            if (taskText !== "") {
+                const li = document.creatElement("li");
+                li.innerHTML = `${tasktext}`;
+
+                taskList.appendchild(li);
+                taskInput.value = "";
+            }
+        }) -->
+
+          
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+</body>
+
+
+</html>

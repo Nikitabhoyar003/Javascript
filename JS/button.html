@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>button onlick</title>
+
+  <style>
+    body{
+background-color: darksalmon;
+    }
+    h1 {
+
+      text-align: center;
+      font-size: 30px;
+      font-family: nunito;
+      margin-top: 50px;
+    }
+
+    button {
+      font-size: 28px;
+      border: 2px solid yellowgreens;
+      text-align: center;
+      margin-left: 670px;
+      background-color: darkgoldenrod;
+      padding: 30px, 30px, 30px, 30px;
+      color: black;
+      margin-top: 30px;
+
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Nidhi</h1>
+
+  <button  onclick="changeColor()">Change color</button>
+
+  <p id="demo"></p>
+  
+    <script>
+
+    //   let colorindex = 0;
+
+    //  function changeColor() {
+
+    //   let colors = ['red','green','yellow','violet','pink','golden'];
+
+    //   let mycolor = colors[Math.floor(Math.random() * colors.length)];
+    //   let myColor = colors[colorIndex];
+
+    //   colorindex ++;
+
+    //   document.getElementById("demo").innerHTML = mycolor ;
+
+    //   button.body.style.backgroundcolor = colors;
+
+    // }   
+
+    //  <script>
+
+     let colorindex = 0;
+
+    function changeColor() {
+      let colors = ['red', 'green', 'purple', 'darkgrey', 'blue', 'gold'];
+
+      let mycolor = colors[colorindex % colors.length];
+
+       colorindex++;
+
+     document.getElementById("demo").innerHTML = mycolor;
+        document.body.style.backgroundColor = mycolor;
+
+    } 
+ 
+     
+    
+
+
+  </script>
+
+</body>
+
+
+
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+        button {
+
+            text-align: center;
+            margin-top: 70px;
+            padding: 10px 50px 10px 50px;
+            border-radius: 15px;
+            border: 1px solid red;
+            background-color: green;
+            font-size: 16px;
+            color: white;
+            margin-left: 500px;
+
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <button type="button" onclick="changeQuotes()">generate quotes</button>
+
+
+   <p id="demo1"></p>
+   <p id="demo2"></p>
+
+
+    <script>
+        // function changeColor() {
+        //     let colors = ['red', 'green','purple', 'darkgrey', 'blue', 'gold'];
+
+        //     let mycolor = colors[colorindex % colors.length];
+
+        //      colorindex++;
+
+        //    document.getElementById("demo").innerHTML = mycolor;
+        //       document.body.style.backgroundColor = mycolor;
+
+        //   } 
+
+
+        function changeQuotes() {
+
+            let quoteNames = [
+
+                {
+                    quotes: "That's one small step for a man, a giant leap for mankind.",
+                    author: "Neil Armstrong"
+                }
+                ,
+                {
+                    quotes: "The love of money is the root of all evil.",
+                    author: "the Bible	Greek"
+
+                }
+                ,
+                {
+                    quotes: "The only thing we have to fear is fear itself.",
+                    author: " Franklin D.Roosevelt"
+
+                }
+                ,
+                {
+                    quotes: "The only thing we have to fear is fear itself.",
+                    author: " Franklin D.Roosevelt"
+
+                }
+                ,
+                {
+                    quotes: "It is never too late to be what you might have been.",
+                    author: "George Eliot"
+                }
+
+            ]
+
+              let   index =  Math.floor(Math.random() *quoteNames.length);               
+             console.log(index)
+
+             document.getElementById("demo1").innerHTML = quoteNames[index].quotes;
+             document.getElementById("demo2").innerHTML = quoteNames[index].author;
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

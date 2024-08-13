@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+            font-family: 'gilroy';
+        }
+
+        html,body{
+            height: 100%;
+            width:100%;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: cornflowerblue;
+
+        }
+
+        #card{
+            height: 450px;
+            width: 380px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        #card img{
+            height:50%;
+            width: 80%;
+            object-fit: cover;
+            object-position:center;
+            border-radius:10px;
+            margin-top: 20px;
+            margin-left: 10px;
+        }
+
+  #card h1{
+    font-size: 25px;
+    margin-top : 15px;
+
+  }
+
+  #card h5{
+        font-size: 25px;
+        color: red;
+        margin : 15px;
+  }
+
+         #card button{
+            background-color: cadetblue;
+            color: #fff;
+            font-weight: 700;
+            padding : 13px 20px;
+            border-radius: 5px;
+            border : none;
+            margin-top: 15px;
+            
+         }
+
+    </style>
+
+</head>
+<body>
+
+    <div id="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBiknrAGOS14xxyheUCVHYppsUQHx9A4zNHg&s" alt="">
+        <h1>Gigi Hadid</h1>
+        <h5>Stranger</h5>
+        <div id="btn-container">
+
+            
+            <button  type="button" id="add">Add friend</button>
+        </div>
+    </div>
+    <script>
+
+        let isstatus = document.querySelector("h5");
+        let btn = document.querySelector("#add")
+        // let removeFriend= document.querySelector("#remove")
+
+        let check= 0;
+
+        btn.addEventListener("click", function(){
+
+            if(check==0){
+            isstatus.innerHTML ="Friends";
+            isstatus.style.color = "green"
+            btn.innerHTML="remove Friend"
+
+            check =1
+            }else {
+                isstatus.innerHTML="Stranger"
+                isstatus.style.color ="red"
+                btn.innerHTML="Add Friend"
+
+                check = 0
+            }
+
+        })
+        // removeFriend.addEventListener("click", function(){
+        //     isstatus.innerHTML ="Stranger";
+        //     isstatus.style.color = "red";
+
+        // })
+
+
+    </script>
+
+
+    
+    
+</body>
+</html>

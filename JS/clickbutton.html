@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>click the button</title>
+
+     <style>
+   
+      body {
+        background-color: blue;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+    div{
+    
+        height:250px;
+        width:  300px;
+        margin-left: 600px;
+        background-color: aliceblue;
+        text-align: center;
+        margin-top: 200px;
+        border-radius: 15px;
+    }
+
+     button{
+  
+        text-align: center;
+        margin-top: 70px;
+        padding: 10px 50px 10px 50px;
+        border-radius: 15px;
+        border: 1px solid red;
+        background-color: red;
+        font-size: 16px;
+        color: white;
+
+     }
+
+     </style>
+
+</head>
+<body>
+    <div>
+      <button type="button" onclick="myFunction()">click Me</button>
+
+ <br>
+ <br>
+ <br>
+      <p id="demo">you click the button this times</p>
+
+    </div>
+
+    <script>
+    const add = (function(){
+        let counter = 0;
+        return function() {counter+= 1; return counter;}
+    })();
+ 
+     function myFunction(){
+     document.getElementById("demo").innerHTML= "you click the button this times:" + add();
+
+    }
+    </script>
+    
+</body>
+</html>

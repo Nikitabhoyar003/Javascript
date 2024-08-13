@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Book</title>
+</head>
+<style>
+    body{
+        background-color:rgb(176, 230, 214);
+    }
+   
+
+    button {
+        background-color: rgba(0, 109, 128, 0.849);
+        border-radius: 5px;
+        font-size: 20px;
+    }
+
+#bookingForm{
+ 
+    height: 550px;
+    width: 500px;
+    text-align: center;
+    border: 2px solid black;
+    margin-left: 550px;
+    margin-top: 100px;
+    border-radius: 20px;
+}
+
+input[type="date"]{
+
+  width:450px;
+  height: 25px;
+
+}
+
+input[type="number"]{
+
+  width:450px;
+  height:25px;
+
+}
+</style>
+
+<body>
+
+        <div id="bookingForm">
+            <h1>Ticket Booking</h1>
+           
+            <label for=""><b>Select Date:</b></label> <br>
+            <input type="date" id="selectDate" name="Select"> <br> <br>
+            <label for=""><b>Number of Tickets:</b></label><br>
+            <input type="number" id="numberofticket" name="number"> <br> <br>
+            <label for=""><b>Select Ticket Type:</b></label><br>
+    
+            <input type="radio" id="standard" name="type"  >
+            <label for="20">Standard($20)</label><br>
+            <input type="radio" id="premium" name="type" >
+            <label for="30">Premium($30)</label><br>
+            <input type="radio" id="vip" name="type"  >
+            <label for="40">VIP($40)</label><br><br>
+        
+            <button type="button" onclick="bookMyTicket()">Book Tickets</button><br>
+            <br>
+    
+            <p id="bookMySummary"></p>
+    
+        </div>
+    
+        <script>
+            function bookMyTicket() { 
+    
+                let selectedDate = document.querySelector("#selectDate").value;
+                console.log(selectedDate);
+                let numberofticket = document.querySelector("#numberofticket").value;
+                console.log(numberofticket);
+                let typeofticket = document.querySelector('input[name="type"]:checked').id;
+                console.log(typeofticket);
+                let value="";
+    
+              let ticketPrice;
+                switch (typeofticket) {
+                    case "standard":
+                        console.log("Switch statement is activated");
+                        ticketPrice = 20;
+                        value = "standard($20)"
+                        break;
+                    case "premium":
+                        ticketPrice = 30;
+                        value = "premium($30)"
+                        break;
+                    case "vip":
+                        ticketPrice = 40;
+                        value = "VIP($40)"
+                        break;
+                    default:
+                        ticketPrice = 0;
+                }
+    
+                let totalPrice = numberofticket * ticketPrice;
+                console.log(totalPrice);
+    
+    
+                let summary = "<h2>Booking Summary</h2>"; 
+                summary += "<b> Date:</b> " + selectedDate + "<br>";
+                summary += "<b>Number of Tickets: </b>" + numberofticket + "<br>";
+                summary += " <b>Ticket Type: </b>" + value + "<br>";
+                summary += "<b>Total Price: $</b>" + totalPrice + "<br>";
+    
+                document.getElementById("bookMySummary").innerHTML = summary;
+            }
+        </script>
+    
+    </body>
+    
+    </html>
+
+
+
+
+
+
+
+
+
+
+
+    
+
+   
